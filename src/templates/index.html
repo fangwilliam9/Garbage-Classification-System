@@ -1,0 +1,102 @@
+<!--   src/templates/index.html   -->
+
+
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>垃圾分类预测</title>
+    <style>
+        /* 页面全局居中 */
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        /* 预览区域样式 */
+        #preview {
+            margin-top: 20px;
+            display: none;
+        }
+
+        #preview img {
+            max-width: 300px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            padding: 5px;
+        }
+
+        /* 上传按钮样式 */
+        button {
+            margin-top: 10px;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h2>上传图片进行垃圾分类</h2>
+    <form id="uploadForm" action="/" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" id="fileInput" required>
+        <button type="submit">上传并预测</button>
+    </form>
+
+    <div id="preview">
+        <h3>图片预览</h3>
+        <img id="previewImage" src="" alt="图片预览">
+        <div id="result"></div>
+    </div>
+
+    <script>
+        document.getElementById("fileInput").onchange = function(event) {
+            let file = event.target.files[0];
+            let previewImage = document.getElementById("previewImage");
+            let previewDiv = document.getElementById("preview");
+            let resultDiv = document.getElementById("result");
+
+            if (file) {
+                let reader = new FileReader();
+                reader.onload = function(e) {
+                    previewImage.src = e.target.result;
+                    previewDiv.style.display = "block";
+                    resultDiv.innerHTML = ""; // 清空上次的预测结果
+                };
+                reader.readAsDataURL(file);
+            } else {
+                previewDiv.style.display = "none";
+                resultDiv.innerHTML = "";
+            }
+        };
+
+        document.getElementById("uploadForm").onsubmit = async function(event) {
+            event.preventDefault();
+
+            let formData = new FormData(this);
+            let response = await fetch("/", { method: "POST", body: formData });
+            let result = await response.json();
+
+            document.getElementById("result").innerHTML = `
+                <h3>预测类别: ${result.class}</h3>
+                <p>置信度: ${result.confidence}%</p>
+                <p>预测所用时间: ${result.time} 毫秒</p>
+            `;
+        };
+    </script>
+</body>
+</html>

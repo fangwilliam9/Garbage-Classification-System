@@ -1,0 +1,26 @@
+=== 模型分类性能 ===
+准确率 (Accuracy): 0.7744
+精确率 (Precision): 0.7846
+召回率 (Recall): 0.7744
+F1 分数 (F1-score): 0.7706
+
+=== 详细分类报告 ===
+              precision    recall  f1-score   support
+
+   cardboard       0.81      0.91      0.86        46
+       glass       0.64      0.88      0.74        65
+       metal       0.76      0.66      0.70        56
+       paper       0.89      0.87      0.88        83
+     plastic       0.83      0.64      0.72        61
+       trash       0.70      0.41      0.52        17
+
+    accuracy                           0.77       328
+   macro avg       0.77      0.73      0.74       328
+weighted avg       0.78      0.77      0.77       328
+
+=== 模型大小 ===
+Model Size: 62.30 MB
+
+=== 推理时间 (Inference Time) ===
+Inference Time: 388.36 ms per image
+
