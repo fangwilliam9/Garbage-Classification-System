@@ -1,4 +1,4 @@
-# ![clip_image002](resources\我的报告\assets\clip_image002.png)
+# ![clip_image002](resources\my_report\assets\clip_image002.png)
 
  
 
@@ -10,7 +10,7 @@
 
 
 
-## 一、点击<u>带下划线的</u>即可查看
+## 一、点击标题 可直达
 
 ### 1.[演示视频](resources/video_demo.mp4)
 
@@ -30,25 +30,25 @@ resources/video_demo.mp4
 
 path: 
 
-- [.md](resources/我的报告/我的报告.md)
-- [.pdf](resources/我的报告/我的报告.pdf)
+- [.md](resources/my_report/my_report.md)
+- [.pdf](resources/my_report/my_report.pdf)
 
 ```raw
-resources/我的报告/我的报告.md
-resources/我的报告/我的报告.pdf
+resources/my_report/my_report.md
+resources/my_report/my_report.pdf
 ```
 
 
 
-### 3.[src目录的结构](resources/文档结构.png)
+### 3.[src目录的结构](resources/file_structure.png)
 
 path:
 
 ```raw
-resources/文档结构.png
+resources/file_structure.png
 ```
 
-![](resources/文档结构.png)
+![](resources/file_structure.png)
 
 此截图不全，后面又新添一个重要的分析评估性能用的文件：analysis.ipynb
 
@@ -56,17 +56,17 @@ resources/文档结构.png
 
 
 
-### 4.[model训练代码的详解](resources/vgg16代码详解/vgg16代码解析.md)
+### 4.model[训练代码的详解](resources/vgg16_code_analysis/vgg16_code_analysis.md)
 
 path:
 
 ```raw
-resources/vgg16代码详解/vgg16代码解析.md
+resources/vgg16_code_analysis/vgg16_code_analysis.md
 ```
 
 
 
-### 5. [PPT演示文稿](resources/我的报告/ppt_demo.pdf)
+### 5. [PPT演示文稿](resources/my_report/ppt_demo.pdf)
 
 path:
 
@@ -74,14 +74,14 @@ path:
 - [.pdf](resources/我的报告/ppt_demo.pdf)
 
 ```python
-resources/我的报告/ppt_demo.pptx
-resources/我的报告/ppt_demo.pdf
+resources/my_report/ppt_demo.pptx
+resources/my_report/ppt_demo.pdf
 ```
 
 
 
 ## 二、如何启动该项目？
 
-此项目绝大部分使用notebook完成：进入src目录，于此path打开cmd，输入`jupyter notebook`即可
+- 此项目绝大部分使用notebook完成：进入src目录，于此path打开cmd，输入`jupyter notebook`即可
 
-对于后端的app.py：也是src目录下打开cmd，输入`python app.py`，浏览器里打开120.0.0.1:5000网页
+- 对于后端的app.py：也是src目录下打开cmd，输入`python app.py`，浏览器里打开120.0.0.1:5000网页
