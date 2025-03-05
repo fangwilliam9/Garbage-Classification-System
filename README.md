@@ -1,4 +1,4 @@
-# ![clip_image002](resources\my_report\assets\clip_image002.png)
+# ![clip_image002](resources/my_report/assets/clip_image002.png)
 
  
 
